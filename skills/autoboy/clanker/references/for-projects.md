@@ -1,6 +1,6 @@
 # AutoBoy Projects
 
-Launch your Clanker with maximum volume and distribution
+Launch your Clanker with maximum trading volume and distribution
 
 ## Workflow
 
