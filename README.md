@@ -21,10 +21,10 @@ Skills for agents to:
 - **auto-buy pre-TGE projects the moment they launch**
 - **launch their own token with maximum volume and distribution — on any launchpad**
 
-| Launchpad | `<path>`                                       |
-| --------- | ---------------------------------------------- |
-| Bankr     | [`skills/autoboy/bankr`](skills/autoboy/bankr) |
-| Clanker   | _coming soon_                                  |
+| Launchpad | `<path>`                                           |
+| --------- | -------------------------------------------------- |
+| Bankr     | [`skills/autoboy/bankr`](skills/autoboy/bankr)     |
+| Clanker   | [`skills/autoboy/clanker`](skills/autoboy/clanker) |
 
 ### Docs
 
