@@ -1,6 +1,6 @@
 # AutoBoy Projects
 
-Launch your Bankr with maximum volume and distribution
+Launch your Bankr with maximum trading volume and distribution
 
 ## Workflow
 
