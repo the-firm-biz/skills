@@ -17,6 +17,44 @@ Choose pre-token projects, auto-buy their tokens the instant they launch
    project launches._
 8. **Withdraw** — `POST /wallet/withdrawals` to pull USDC or tokens out.
 
+## Custody and confirmations
+
+- **The AutoBoy wallet is third-party custody.** The smart wallet is managed
+  by Privy, with signer authority delegated to The Firm — The Firm can spend
+  any USDC sent to it until the user withdraws. Make sure the user
+  understands this before they fund it.
+- **Fund a bounded amount.** Recommend sending only what the user is willing
+  to commit to pre-launch buys, never their full balance.
+- **Confirm before acting.** Get the user's explicit confirmation before
+  funding the wallet, creating, updating, or cancelling orders, or enabling
+  any auto-buy behavior. Never do these unprompted.
+- **Orders are visible to the project.** Placing a buy order exposes the
+  user's identity, order size, and price to the project team via its buyers
+  list — make sure the user knows this before their first order.
+
+### Before creating or updating orders
+
+Before any `POST /orders` or `PATCH /orders`, show the user and get their
+confirmation on:
+
+- the project each order targets,
+- the spend amount and max market cap per order,
+- the current wallet balance (`GET /wallet`),
+- the way out — orders cancel via `DELETE /orders`, funds can be withdrawn via
+  `POST /wallet/withdrawals`.
+
+### Before withdrawing
+
+Before any `POST /wallet/withdrawals`:
+
+- confirm the destination address, token, and amount with the user — state
+  the amount in human units (withdrawal amounts are atomic-unit strings:
+  `"2500000"` is 2.5 USDC),
+- validate the destination is a Base-chain address (`0x…`, 42 hex chars) the
+  user controls,
+- get a final explicit confirmation — a withdrawal to the wrong address is
+  irreversible.
+
 ## Relevant endpoints
 
 ### Base URL
